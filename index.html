@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌻 Weather 🌷</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Sniglet&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/16842fe55e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+
+<body>
+  <div class="container whole">
+    <div class="row">
+      <div class="col-2 m-0 p-0 clock">01:34</div>
+      <div class="col-8 m-0 p-0">
+        <div class="search-bar">
+          <button id="here"><i class="fa-solid fa-location-crosshairs"></i></button>
+          <form id="search">
+
+
+            <input autocomplete="off" type="search" placeholder="  Search a city..." onfocus="this.value=''"
+              name="search" autofocus id="input" />
+            <button type="submit"><i class="fa fa-search" id="#search-button"></i></button>
+        </div>
+        </form>
+      </div>
+      <div class=" col-2 m-0 p-0 date" id="date-html">18 jul
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+
+      <div class="col-12 col-md-4">
+        <div class="location-name-big text-center text-md-right">Tehran?</div>
+
+        <div class="weather-temp-big text-center text-md-right">
+          <span id="temp">-1</span>
+          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-light" id="cel">°C</button>
+            <button type="button" class="btn btn-light" id="far">°F</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="weather-name-big">sunny</div>
+        <img src="images/animated/rainy-5.svg" class="weather-photo-big" />
+      </div>
+      <div class="col-12 col-md-4 other text-center text-md-left">
+        <div class="day-big text-center text-md-left">Wednesday</div>
+        <ul>
+          <li>
+            <div class="precipitation"><strong>Feels like:</strong> 12℃</div>
+          </li>
+          <li>
+            <div class="weather-humidity"><strong>Humidity :</strong> 2%</div>
+          </li>
+          <li>
+            <div class="weather-wind"><strong>Wind:</strong> 6.17km/hr</div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <br />
+    <div class="row no-gutters">
+      <div class="col-1 col-md-1"></div>
+      <div class="col-5 col-md-2">
+        <div class="card no1" style="width: 100%;">
+          <img class="card-img-top" src="images/animated/snowy-3.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text">Sun</p>
+          </div>
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+      <div class="col-5 col-md-2">
+        <div class="card no2" style="width: 100%">
+          <img class="card-img-top" src="images/animated/cloudy.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text m-0">Tue</p>
+          </div>
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+      <div class="col-1 col-md-auto no-gutters "></div>
+      <div class="col-1 col-md-auto no-gutters"></div>
+      <div class="col-5 col-md-2">
+        <div class="card no3" style="width: 100%">
+          <img class="card-img-top" src="images/animated/snowy-6.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text">Tue</p>
+          </div>
+
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+
+      <div class="col-5 col-md-2">
+        <div class="card no4">
+          <img class="card-img-top" src="images/animated/thunder.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text">Sun</p>
+          </div>
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+      <div class="col-1 col-md-auto no-gutters "></div>
+      <div class="col-1 col-md-auto no-gutters"></div>
+      <div class="col-10 col-md-2">
+        <div class="card no5" style="width: 100%">
+          <img class="card-img-top" src="images/animated/cloudy-day-3.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text">Sun</p>
+          </div>
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+      <div class="col-0 col-md-1"></div>
+    </div>
+  </div>
+  <script src="src/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+.search-bar {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: fit-content;
+  padding: 3px 20px;
+  position: relative;
+  top: -1px;
+  background-color: white;
+  border-radius: 0 0 30px 30px;
+}
+
+form {
+  display: inline;
+}
+input {
+  width: 74%;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+input:active {
+  border: none;
+}
+button {
+  display: inline;
+  float: center;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.whole {
+  display: block;
+  margin: 3% auto;
+  width: 700px;
+  max-width: 95%;
+  border: 3px ridge black;
+  border-radius: 30px;
+  background: rgb(195, 242, 255);
+  background: linear-gradient(180deg, #c3f2ff 0%, #7dace4 60%);
+  height: fit-content;
+  padding: 0 3%;
+}
+
+body {
+  background-origin: border-box;
+  background-repeat: repeat;
+  background-size: 300px;
+  background-attachment: fixed;
+  background-image: url("../images/bg2.jpg");
+  font-family: "Sniglet", cursive;
+}
+
+.weather-name-big {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  font-family: "Patua One", cursive;
+}
+.other {
+  line-height: 30px;
+}
+.weather-photo-big {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: -40px;
+}
+hr {
+  height: 2px;
+}
+.location-name-big {
+  font-family: "Patua One", cursive;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  font-size: 50px;
+  line-height: 50px;
+}
+.day-big {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  font-weight: 100;
+  font-family: "Patua One", cursive;
+  font-size: x-large;
+  padding: 10px 0 15px 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 40px;
+}
+
+.weather-temp-big {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  font-size: 70px;
+  line-height: 50px;
+  padding-top: 20px;
+}
+.weather-temp-big #sign {
+  font-size: 15px;
+  position: relative;
+  bottom: 40px;
+}
+.card {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.card img {
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 50%;
+}
+.card p {
+  text-align: center;
+  margin: 0;
+  font-weight: 900;
+}
+.card h7 {
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.no1 {
+  border-top-left-radius: 30px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.no2 {
+  border-top: 1px solid black;
+}
+.no3 {
+  border-top: 1px solid black;
+}
+.no4 {
+  border-top: 1px solid black;
+}
+.no5 {
+  width: 100%;
+  border-top-right-radius: 30px;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+.clock {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+}
+.date {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+.btn-light {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+}
+.btn-group-vertical {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .no1 {
+    border-top-left-radius: 30px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+  }
+  .no2 {
+    border-top-right-radius: 30px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+  }
+  .no3 {
+    border-top: none;
+    border-left: 1px solid black;
+  }
+  .no4 {
+    border-top: none;
+    border-right: 1px solid black;
+  }
+  .no5 {
+    border-top: none;
+    border-top-right-radius: 0px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+  }
+  .no5 img {
+    width: 25%;
+  }
+  .other {
+    position: reletive;
+    top: -60px;
+  }
+  input {
+    width: 65%;
+  }
+}
