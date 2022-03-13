@@ -10,6 +10,24 @@
   border-radius: 0 0 30px 30px;
 }
 
+#openSource {
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255),
+    0 0 0.2em rgb(255, 255, 255);
+  border-radius: 0 0 20px 20px;
+  padding-left: 40px;
+  text-align: 10%;
+  width: 700px;
+  max-width: 95%;
+  display: block;
+  margin: auto;
+  font-weight: bolder;
+}
+
+#openSource a {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
 form {
   display: inline;
 }
@@ -33,7 +51,7 @@ button {
 
 .whole {
   display: block;
-  margin: 3% auto;
+  margin: 3% auto 0 auto;
   width: 700px;
   max-width: 95%;
   border: 3px ridge black;
