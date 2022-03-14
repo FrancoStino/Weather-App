@@ -223,6 +223,11 @@ div .container {
     border-right: 1px solid black;
     border-top: 1px solid black;
   }
+  #openSource {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
   .no3 {
     border-top: none;
     border-left: 1px solid black;
