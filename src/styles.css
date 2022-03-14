@@ -1,6 +1,6 @@
 .search-bar {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   border: 1px solid black;
   width: fit-content;
   padding: 3px 20px;
@@ -10,6 +10,10 @@
   border-radius: 0 0 30px 30px;
 }
 
+.row {
+  margin: 0 !important;
+  height: fit-content !important;
+}
 #openSource {
   color: rgb(0, 0, 0);
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255),
@@ -28,6 +32,7 @@
   color: rgb(0, 0, 0);
   text-decoration: underline;
 }
+
 form {
   display: inline;
 }
@@ -50,8 +55,10 @@ button {
 }
 
 .whole {
+  overflow-wrap: break-word;
+  text-transform: capitalize;
   display: block;
-  margin: 3% auto 0 auto;
+  margin: 7% auto 0 auto;
   width: 700px;
   max-width: 95%;
   border: 3px ridge black;
@@ -84,7 +91,7 @@ body {
   line-height: 30px;
 }
 .weather-photo-big {
-  width: 100%;
+  width: 80%;
   display: block;
   margin: 0 auto;
   position: relative;
@@ -98,7 +105,7 @@ hr {
   width: 100%;
   display: block;
   margin: 0 auto;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 50px;
 }
 .day-big {
@@ -193,7 +200,19 @@ ul {
   padding-bottom: 10px;
 }
 
+.marginRow {
+  margin: 0px !important;
+}
+
+div .container {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
+  .whole {
+    margin: 2.5% auto 0 auto;
+  }
   .no1 {
     border-top-left-radius: 30px;
     border-left: 1px solid black;
