@@ -90,6 +90,9 @@ wind.innerHTML=`<strong>Wind:</strong> ${response.data.wind.speed}m/s`;
 let percipitation = document.querySelector(".precipitation");
 percipitation.innerHTML=`<strong>Feels like:</strong> ${Math.round(response.data.main.feels_like)}℃`;
 lastUpdated(response.data.dt*1000);
+let image = document.querySelector(".weather-photo-big");
+image.setAttribute("src",`images/big/${response.data.weather[0].icon}.svg`);
+image.setAttribute("alt",`${response.data.weather[0].description}`);
 }
 
 function getCurrent(pos) {
