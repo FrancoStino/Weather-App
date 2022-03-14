@@ -200,19 +200,12 @@ ul {
   padding-bottom: 10px;
 }
 
-.marginRow {
-  margin: 0px !important;
-}
-
-div .container {
+div .whole {
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 768px) {
-  .whole {
-    margin: 2.5% auto 0 auto;
-  }
   .no1 {
     border-top-left-radius: 30px;
     border-left: 1px solid black;
