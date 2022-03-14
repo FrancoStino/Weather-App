@@ -56,7 +56,6 @@ button {
 
 .whole {
   overflow-wrap: break-word;
-  text-transform: capitalize;
   display: block;
   margin: 7% auto 0 auto;
   width: 700px;
@@ -67,6 +66,10 @@ button {
   background: linear-gradient(180deg, #c3f2ff 0%, #7dace4 60%);
   height: fit-content;
   padding: 0 3%;
+}
+
+:first-letter {
+  text-transform: capitalize;
 }
 
 body {
@@ -181,14 +184,19 @@ ul {
   border-top: 1px solid black;
 }
 .clock {
-  text-align: right;
+  margin-top: 3px;
+  text-align: center;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
+  line-height: 18px;
 }
 .date {
-  text-align: left;
+  margin-top: 3px;
+  text-align: center;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
+  line-height: 18px;
+  flex-wrap: nowrap;
 }
 .btn-light {
   padding: 0;

@@ -1,6 +1,10 @@
 //update date and hour and week
-function resetDate(date)
+function lastUpdated(){
+
+}
+function systemDate()
 {
+  date = new Date();
 let year = [
   "Jan",
   "Feb",
@@ -16,7 +20,7 @@ let year = [
   "Dec"
 ];
 let dateShown = document.querySelector("#date-html");
-dateShown.innerHTML = `${date.getDate()} ${year[date.getMonth()]}`;
+dateShown.innerHTML = `${date.getDate()} ${year[date.getMonth()]} ${date.getYear()+1900}`;
 
 let hour = date.getHours();
 let minute = date.getMinutes();
@@ -27,7 +31,7 @@ if (hour < 10) {
 if (minute < 10) {
   minute = `0${minute}`;
 }
-hourShown.innerHTML = `${hour}:${minute}`;
+
 
 let week = [
   "Sunday",
@@ -42,6 +46,7 @@ let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = date.getDay();
 let dayOfweek = document.querySelector(".day-big");
 dayOfweek.innerHTML = week[day];
+hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 let daySmall = document.querySelector(".no1 p");
 daySmall.innerHTML = weekSmall[(day + 1) % 7];
 daySmall = document.querySelector(".no2 p");
@@ -85,9 +90,6 @@ let wind = document.querySelector(".weather-wind");
 wind.innerHTML=`<strong>Wind:</strong> ${response.data.wind.speed}m/s`;
 let percipitation = document.querySelector(".precipitation");
 percipitation.innerHTML=`<strong>Feels like:</strong> ${Math.round(response.data.main.feels_like)}℃`;
-/*resetDate(new Date(response.data.dt * 1000));
-console.log(response.data.dt);
-console.log(new Date(response.data.dt * 1000));*/
 }
 
 function getCurrent(pos) {
@@ -119,5 +121,5 @@ function prevent(event){
 
 let here = document.querySelector("#here");
 here.addEventListener("click",prevent);
-resetDate(new Date());
+systemDate();
 
