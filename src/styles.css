@@ -80,7 +80,7 @@ body {
 .weather-name-big {
   width: 100%;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   text-align: center;
   font-size: 30px;
   line-height: 30px;
