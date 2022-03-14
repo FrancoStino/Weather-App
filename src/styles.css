@@ -112,15 +112,14 @@ hr {
   display: block;
   margin: 0 auto;
   font-weight: 100;
-  font-family: "Patua One", cursive;
-  font-size: x-large;
-  padding: 10px 0 15px 0;
+  font-size: 18px;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  line-height: 40px;
+  margin: 10px 0 0 0;
+  line-height: 30px;
 }
 
 .weather-temp-big {

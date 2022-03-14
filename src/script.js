@@ -1,7 +1,18 @@
 //update date and hour and week
-function lastUpdated(){
-
+function lastUpdated(timestamp){
+let date = new Date(timestamp);
+let updated = document.querySelector("#updated");
+let hour = date.getHours();
+let minute = date.getMinutes();
+if (hour < 10) {
+  hour = `0${hour}`;
 }
+if (minute < 10) {
+  minute = `0${minute}`;
+}
+updated.innerHTML=`<strong>${hour}:${minute}</strong>`;
+}
+
 function systemDate()
 {
   date = new Date();
@@ -32,20 +43,8 @@ if (minute < 10) {
   minute = `0${minute}`;
 }
 
-
-let week = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
 let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = date.getDay();
-let dayOfweek = document.querySelector(".day-big");
-dayOfweek.innerHTML = week[day];
 hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 let daySmall = document.querySelector(".no1 p");
 daySmall.innerHTML = weekSmall[(day + 1) % 7];
@@ -90,6 +89,7 @@ let wind = document.querySelector(".weather-wind");
 wind.innerHTML=`<strong>Wind:</strong> ${response.data.wind.speed}m/s`;
 let percipitation = document.querySelector(".precipitation");
 percipitation.innerHTML=`<strong>Feels like:</strong> ${Math.round(response.data.main.feels_like)}℃`;
+lastUpdated(response.data.dt*1000);
 }
 
 function getCurrent(pos) {
