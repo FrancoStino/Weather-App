@@ -1,6 +1,6 @@
 //update date and hour and week
+function resetDate(date)
 {
-let date = new Date();
 let year = [
   "Jan",
   "Feb",
@@ -85,6 +85,9 @@ let wind = document.querySelector(".weather-wind");
 wind.innerHTML=`<strong>Wind:</strong> ${response.data.wind.speed}m/s`;
 let percipitation = document.querySelector(".precipitation");
 percipitation.innerHTML=`<strong>Feels like:</strong> ${Math.round(response.data.main.feels_like)}℃`;
+/*resetDate(new Date(response.data.dt * 1000));
+console.log(response.data.dt);
+console.log(new Date(response.data.dt * 1000));*/
 }
 
 function getCurrent(pos) {
@@ -116,6 +119,5 @@ function prevent(event){
 
 let here = document.querySelector("#here");
 here.addEventListener("click",prevent);
-
-
+resetDate(new Date());
 
