@@ -3,7 +3,7 @@
   margin: 0 auto 30px auto;
   border: 1px solid black;
   width: fit-content;
-  padding: 3px 20px;
+  padding: 3px 10px;
   position: relative;
   top: -1px;
   background-color: white;
@@ -50,6 +50,12 @@ button {
   background-color: white;
 }
 
+#far,
+#cel {
+  padding: 0 5px;
+  border-radius: 20px;
+  margin: 5px 0;
+}
 .whole {
   overflow-wrap: break-word;
   display: block;
@@ -232,18 +238,27 @@ div .container {
     border-top: none;
     border-right: 1px solid black;
   }
+  br {
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
   .no5 {
     border-top: none;
     border-top-right-radius: 0px;
     border-right: 1px solid black;
     border-left: 1px solid black;
   }
+  body {
+    background-position: -50px;
+    background-size: 57%;
+  }
   .no5 img {
     width: 25%;
   }
   .other {
     position: reletive;
-    top: -50px;
+    top: -35px;
   }
   input {
     width: 65%;
