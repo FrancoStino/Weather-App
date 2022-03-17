@@ -49,12 +49,28 @@ button {
   border-radius: 50%;
   background-color: white;
 }
-
+button:focus {
+  box-shadow: none !important;
+}
 #far,
 #cel {
+  background: transparent;
   padding: 0 5px;
+  margin-bottom: 5px;
   border-radius: 20px;
-  margin: 5px 0;
+  height: 30px;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.active {
+  color: gray !important;
+  font-weight: 100 !important;
+  font-size: 20px !important;
+}
+
+.active:hover {
+  cursor: default !important;
 }
 
 .whole {
@@ -96,6 +112,7 @@ body {
 .other {
   line-height: 30px;
 }
+
 .weather-photo-big {
   width: 70%;
   display: block;
