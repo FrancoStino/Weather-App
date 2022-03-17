@@ -186,6 +186,3 @@ let far=document.querySelector("button#far");
 far.addEventListener("click",toFarenheitAll);
 let cel= document.querySelector("button#cel");
 cel.addEventListener("click",toCelciusAll);
-/*let cel=document.querySelector("button#cel");
-far.addEventListener("click",toCelciusAll);
-*/
