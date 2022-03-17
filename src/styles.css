@@ -89,7 +89,7 @@ body {
   display: block;
   margin: 10px auto 0 auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
   font-family: "Patua One", cursive;
 }
@@ -109,10 +109,17 @@ hr {
 .location-name-big {
   font-family: "Patua One", cursive;
   width: 100%;
+  font-size: 35px;
+  line-height: 50px;
+}
+#nameWhole {
   display: block;
   margin: 0 auto;
-  font-size: 40px;
-  line-height: 50px;
+  text-align: right;
+}
+#country {
+  font-size: 10px;
+  font-weight: 200;
 }
 .day-big {
   width: 100%;
