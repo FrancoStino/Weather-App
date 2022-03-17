@@ -69,6 +69,10 @@ button:hover {
   font-weight: 900;
   font-size: 25px;
 }
+#far:hover,
+#cel:hover {
+  cursor: default;
+}
 
 .active {
   color: gray !important;
@@ -77,7 +81,7 @@ button:hover {
 }
 
 .active:hover {
-  cursor: default !important;
+  cursor: pointer !important;
 }
 
 .whole {
