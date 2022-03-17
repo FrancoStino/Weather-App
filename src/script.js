@@ -64,8 +64,12 @@ let cityName = document.querySelector(".location-name-big");
 cityName.innerHTML=response.data.name;
 console.log(response.data.name);
 let cityTemp= document.querySelector("#temp");
-cityTemp.innerHTML= Math.round(response.data.main.temp);
 celcius = Math.round(response.data.main.temp);
+  document.getElementById("far").style.fontWeight= "100";
+   document.getElementById("far").style.color="grey";
+ document.getElementById("cel").style.fontWeight= "900";
+  document.getElementById("cel").style.color="black";
+cityTemp.innerHTML= Math.round(response.data.main.temp);
 let cityDescription =document.querySelector(".weather-name-big"); 
 cityDescription.innerHTML=response.data.weather[0].description;
 let humidity = document.querySelector(".weather-humidity");
@@ -122,6 +126,10 @@ if(tempBig.innerHTML==celcius){
   feels.innerHTML =toFarenheit(feels.innerHTML);
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°F";
+  document.getElementById("cel").style.fontWeight= "100";
+   document.getElementById("cel").style.color="grey";
+ document.getElementById("far").style.fontWeight= "900";
+   document.getElementById("far").style.color="black";
  /* let no1 = document.querySelector(".no1");
   no1.innerHTML=toFarenheit(no1.innerHTML);
   let no2 =document.querySelector(".no2");
@@ -150,6 +158,10 @@ else{
   feels.innerHTML = toCelcius(feels.innerHTML);
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°C";
+   document.getElementById("far").style.fontWeight= "100";
+   document.getElementById("far").style.color="grey";
+ document.getElementById("cel").style.fontWeight= "900";
+  document.getElementById("cel").style.color="black";
 }
 }
 
