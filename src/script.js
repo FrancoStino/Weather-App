@@ -62,6 +62,7 @@ daySmall.innerHTML = weekSmall[(day + 5) % 7];
 function getInfoOfCity(response){
 let cityName = document.querySelector(".location-name-big");
 cityName.innerHTML=response.data.name;
+console.log(response.data.name);
 let cityTemp= document.querySelector("#temp");
 cityTemp.innerHTML= Math.round(response.data.main.temp);
 celcius = Math.round(response.data.main.temp);
