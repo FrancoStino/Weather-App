@@ -280,6 +280,15 @@ div .container {
   .whole {
     margin: 2.5% auto 0 auto;
   }
+  body {
+    background-image: none;
+    background: rgb(86, 160, 238);
+    background: linear-gradient(
+      180deg,
+      rgba(86, 160, 238, 1) 0%,
+      rgba(0, 0, 0, 1) 95%
+    );
+  }
   .no1 {
     border-top-left-radius: 30px;
     border-left: 1px solid black;
