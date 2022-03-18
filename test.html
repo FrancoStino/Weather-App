@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --ambrosia: #FCDBBA;
+            --apricot: #FF8652;
+            --aubergine: #6A2352;
+            --auburn: #A12F2F;
+            --asparagus: #A0C259;
+            --beetroot: #7F0421;
+            --blue-tack: #82BFE0;
+            --bloom: #363A57;
+            --blush: #D67B71;
+            --bronze: #C27940;
+            --bud: #94C15C;
+            --burnt-orange: #FF5F00;
+            --butter: #F2C94C;
+            --strawberry-yogurt: #E4BCAD;
+            --carmine: #9A133E;
+            --chocolate: #8F5D38;
+            --chestnut: #81291F;
+            --clay: #7D6050;
+            --conker: #6F3131;
+            --coral: #EB4444;
+            --dusty-purple: #7D6391;
+            --dusty-pink: #E4ADAD;
+            --emerald: #55B95F;
+            --fern: #4F8D08;
+            --forest: #2E644A;
+            --fudge: #C28742;
+            --grassy: #A8D363;
+            --green: #62B90A;
+            --hazelnut: #D08E5A;
+            --ink: #292C31;
+            --ivory: #F2EFE3;
+            --lapis: #2B4D8D;
+            --leafy: #318553;
+            --lemon: #EAFC7E;
+            --lime: #73D645;
+            --limestone: #C9C5B5;
+            --magenta: #BC2767;
+            --meadow: #7A9A3E;
+            --melon: #F2994A;
+            --midnight: #1B3955;
+            --mink: #E8C9A1;
+            --mint: #C4EA70;
+            --moss: #7DB21C;
+            --mushroom: #EDE8D5;
+            --navy: #363A57;
+            --orange: #FD8A04;
+            --pale-lemon: #F4FFDC;
+            --peach: #FFB190;
+            --pond-bottom: #264A46;
+            --powder-blue: #B5D0E0;
+            --powder-pink: #FBD1D1;
+            --primrose: #E1F7B0;
+            --purple: #A95AF3;
+            --purple-slate: #545375;
+            --rainforest: #25422E;
+            --raspberry-jam: #3C0D2B;
+            --robins-egg: #B8DEE0;
+            --rouge: #CC3737;
+            --royal: #4169E1;
+            --ruby: #D1314B;
+            --sage: #87A376;
+            --sakura: #FFE4E4;
+            --sea-glass: #7FD1AE;
+            --sea-foam: #5D998B;
+            --sea-fog: #758C92;
+            --slate: #7184A5;
+            --spearmint: #94E0CF;
+            --spring: #5ACB65;
+            --succulent: #83A944;
+            --twilight: #203763;
+            --vavavoom: #BF0D0D;
+            --white: #FFFFFF;
+            --yellow: #FFE03D;
+
+            --trans: transparent;
+            --trans05: rgba(255, 255, 255, 0.05);
+            --trans1: rgba(255, 255, 255, 0.1);
+            --trans2: rgba(255, 255, 255, 0.2);
+            --trans4: rgba(255, 255, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+        }
+
+        body {
+            background: #334;
+            margin: 1em;
+            max-width: 90em;
+        }
+
+        div {
+            height: 2em;
+            width: 2em;
+            display: inline-block;
+            float: left;
+            margin: 0.1em;
+            border-radius: 0.12em;
+            font-size: 4em;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        div::before,
+        div::after {
+            border-radius: 0.12em;
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .current {
+            border-radius: 0;
+            font-size: 5.5em;
+            height: 5em;
+            width: 5em;
+        }
+
+        .current::before,
+        .current::after {
+            border-radius: 0;
+        }
+
+        .rainbows {
+            background-color: var(--spearmint);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--trans),
+                    var(--trans) 0.2em,
+                    var(--purple) 0.21em,
+                    var(--purple) 0.24em,
+                    var(--royal) 0.25em,
+                    var(--royal) 0.3em,
+                    var(--emerald) 0.31em,
+                    var(--emerald) 0.35em,
+                    var(--butter) 0.36em,
+                    var(--butter) 0.4em,
+                    var(--orange) 0.41em,
+                    var(--orange) 0.45em,
+                    var(--rouge) 0.46em,
+                    var(--rouge) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 2em);
+            background-size: 1em 0.5em;
+        }
+
+        .rainbows::before {
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--trans),
+                    var(--trans) 0.2em,
+                    var(--purple) 0.21em,
+                    var(--purple) 0.24em,
+                    var(--royal) 0.25em,
+                    var(--royal) 0.3em,
+                    var(--emerald) 0.31em,
+                    var(--emerald) 0.35em,
+                    var(--butter) 0.36em,
+                    var(--butter) 0.4em,
+                    var(--orange) 0.41em,
+                    var(--orange) 0.45em,
+                    var(--rouge) 0.46em,
+                    var(--rouge) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 2em);
+            background-size: 1em 0.5em;
+            background-position: 0.5em 0.75em;
+        }
+
+        .rainbows::after {
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.75em,
+                    var(--trans),
+                    var(--trans) 0.2em,
+                    var(--purple) 0.21em,
+                    var(--purple) 0.24em,
+                    var(--royal) 0.25em,
+                    var(--royal) 0.3em,
+                    var(--emerald) 0.31em,
+                    var(--emerald) 0.35em,
+                    var(--butter) 0.36em,
+                    var(--butter) 0.4em,
+                    var(--orange) 0.41em,
+                    var(--orange) 0.45em,
+                    var(--rouge) 0.46em,
+                    var(--rouge) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 2em);
+            background-size: 1em 0.5em;
+            background-position: 0.0em 0.25em;
+        }
+
+        .bones {
+            background-color: var(--aubergine);
+            background-image:
+                repeating-radial-gradient(circle at 0.2em 0.3em,
+                    var(--trans),
+                    var(--trans) 0.49em,
+                    var(--aubergine) 0.5em,
+                    var(--aubergine) 3em),
+                repeating-radial-gradient(circle at 1.1em -1.4em,
+                    var(--trans),
+                    var(--trans) 1.99em,
+                    var(--mushroom) 2em,
+                    var(--mushroom) 2.15em,
+                    var(--trans) 2.16em,
+                    var(--trans) 3em);
+            background-size: 1em 1em;
+        }
+
+        .bones::before {
+            background-size: 1em 1em;
+            background-position: 0em 0.1em;
+            background-image:
+                repeating-radial-gradient(circle at -0.7em -0.5em,
+                    var(--trans),
+                    var(--trans) 1.99em,
+                    var(--mushroom) 2em,
+                    var(--mushroom) 2.15em,
+                    var(--trans) 2.16em,
+                    var(--trans) 3em);
+        }
+
+        .bones::after {
+            background-size: 1em 1em;
+            background-position: 0.2em 0.2em;
+            background-image:
+                repeating-radial-gradient(circle at 0.44em 0.35em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.4em 0.44em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+
+                repeating-radial-gradient(circle at 0.89em 0.13em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.84em 0.23em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+
+                repeating-radial-gradient(circle at 0.78em 0.54em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.86em 0.62em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+
+                repeating-radial-gradient(circle at 0.47em 0.88em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.56em 0.95em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.56em -0.05em,
+                    var(--mushroom),
+                    var(--mushroom) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 3em);
+        }
+
+        .villain-underpants {
+            background-color: var(--carmine);
+            background-image:
+                repeating-radial-gradient(circle at 1.2em -0.2em,
+                    var(--ruby),
+                    var(--ruby) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at -0.2em -0.2em,
+                    var(--ruby),
+                    var(--ruby) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 3em);
+            background-size: 1em 1em;
+            background-position: 0 0;
+        }
+
+        .villain-underpants::before {
+            background-image:
+                repeating-radial-gradient(circle at 1.2em -0.2em,
+                    var(--ruby),
+                    var(--ruby) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at -0.2em -0.2em,
+                    var(--ruby),
+                    var(--ruby) 0.5em,
+                    var(--trans) 0.51em,
+                    var(--trans) 3em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .villain-underpants::after {
+            background-image:
+                repeating-radial-gradient(circle at 0.385em 0.64em,
+                    var(--ruby),
+                    var(--ruby) 0.14em,
+                    var(--trans) 0.15em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.615em 0.64em,
+                    var(--ruby),
+                    var(--ruby) 0.14em,
+                    var(--trans) 0.15em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.885em 0.14em,
+                    var(--ruby),
+                    var(--ruby) 0.14em,
+                    var(--trans) 0.15em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.115em 0.14em,
+                    var(--ruby),
+                    var(--ruby) 0.14em,
+                    var(--trans) 0.15em,
+                    var(--trans) 2em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.32em;
+        }
+
+        .cumulus {
+            background-color: var(--blue-tack);
+            background-image:
+                repeating-radial-gradient(circle at 0.77em 0.87em,
+                    var(--white),
+                    var(--white) 0.12em,
+                    var(--trans) 0.121em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.94em 1.05em,
+                    var(--white),
+                    var(--white) 0.16em,
+                    var(--trans) 0.161em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.24em 1.05em,
+                    var(--white),
+                    var(--white) 0.16em,
+                    var(--trans) 0.161em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.5em 0.92em,
+                    var(--white),
+                    var(--white) 0.26em,
+                    var(--trans) 0.261em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.58em 1.1em,
+                    var(--white),
+                    var(--white) 0.35em,
+                    var(--trans) 0.351em,
+                    var(--trans) 3em);
+            background-size: 2em 1.21em;
+            background-position: -0.3em -0.2em;
+        }
+
+        .cumulus::after {
+            background-image:
+                repeating-radial-gradient(circle at 0.74em 1.08em,
+                    var(--white),
+                    var(--white) 0.13em,
+                    var(--trans) 0.131em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.22em 1.05em,
+                    var(--white),
+                    var(--white) 0.16em,
+                    var(--trans) 0.161em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.45em 1.02em,
+                    var(--white),
+                    var(--white) 0.28em,
+                    var(--trans) 0.281em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.45em 1.2em,
+                    var(--white),
+                    var(--white) 0.28em,
+                    var(--trans) 0.281em,
+                    var(--trans) 3em);
+            background-size: 2em 1.21em;
+            background-position: -1.2em 0.4em;
+        }
+
+        .quatrefoil {
+            background-color: var(--mushroom);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--mushroom),
+                    var(--mushroom) 0.26em,
+                    var(--trans) 0.275em,
+                    var(--trans) 2em),
+
+                repeating-radial-gradient(circle at 0.59em 0.31em,
+                    var(--mushroom),
+                    var(--mushroom) 0.26em,
+                    var(--trans) 0.275em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.59em 0.87em,
+                    var(--mushroom),
+                    var(--mushroom) 0.26em,
+                    var(--trans) 0.275em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.31em 0.59em,
+                    var(--mushroom),
+                    var(--mushroom) 0.26em,
+                    var(--trans) 0.275em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.87em 0.59em,
+                    var(--mushroom),
+                    var(--mushroom) 0.26em,
+                    var(--trans) 0.275em,
+                    var(--trans) 2em),
+
+                repeating-radial-gradient(circle at 0.59em 0.31em,
+                    var(--slate),
+                    var(--slate) 0.35em,
+                    var(--trans) 0.351em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.59em 0.87em,
+                    var(--slate),
+                    var(--slate) 0.35em,
+                    var(--trans) 0.351em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.31em 0.59em,
+                    var(--slate),
+                    var(--slate) 0.35em,
+                    var(--trans) 0.351em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.87em 0.59em,
+                    var(--slate),
+                    var(--slate) 0.35em,
+                    var(--trans) 0.351em,
+                    var(--trans) 2em);
+            background-size: 1.2em 1.2em;
+            background-position: 0.42em 0.42em;
+        }
+
+        .leaf {
+            background-color: var(--forest);
+            background-image:
+                repeating-radial-gradient(circle at 1.4em 0.49em,
+                    var(--spring),
+                    var(--spring) 0.54em,
+                    var(--trans) 0.555em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at -0.4em 0.49em,
+                    var(--lime),
+                    var(--lime) 0.54em,
+                    var(--trans) 0.555em,
+                    var(--trans) 2em);
+            background-size: 1em 1.25em;
+            background-position: 0.5em 0.15em;
+        }
+
+        .leaf::after {
+            background-image:
+                repeating-radial-gradient(circle at 1.4em 0.49em,
+                    var(--spring),
+                    var(--spring) 0.54em,
+                    var(--trans) 0.555em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at -0.4em 0.49em,
+                    var(--lime),
+                    var(--lime) 0.54em,
+                    var(--trans) 0.555em,
+                    var(--trans) 2em);
+            background-size: 1em 1.25em;
+            background-position: 0 0.75em;
+        }
+
+        .kitchen-tiles {
+            background-color: var(--mushroom);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--butter),
+                    var(--melon) 0.5em,
+                    var(--trans) 0.22em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.26em 0.26em,
+                    var(--melon),
+                    var(--melon) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.74em 0.26em,
+                    var(--melon),
+                    var(--melon) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.26em 0.74em,
+                    var(--melon),
+                    var(--melon) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.74em 0.74em,
+                    var(--melon),
+                    var(--melon) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 2em);
+            background-size: 1em 1em;
+        }
+
+        .kitchen-tiles::before {
+            background-image:
+                repeating-linear-gradient(90deg,
+                    var(--trans),
+                    var(--trans) 0.44em,
+                    var(--mushroom) 0.44em,
+                    var(--mushroom) 0.56em,
+                    var(--trans) 0.56em,
+                    var(--trans) 1em),
+                repeating-linear-gradient(0deg,
+                    var(--trans),
+                    var(--trans) 0.44em,
+                    var(--mushroom) 0.44em,
+                    var(--mushroom) 0.56em,
+                    var(--trans) 0.56em,
+                    var(--trans) 1em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .medpack {
+            background-color: var(--emerald);
+            background-image:
+                repeating-linear-gradient(90deg,
+                    var(--emerald),
+                    var(--emerald) 0.22em,
+                    var(--trans) 0.22em,
+                    var(--trans) 0.78em,
+                    var(--emerald) 0.78em,
+                    var(--emerald) 1em),
+                repeating-linear-gradient(0deg,
+                    var(--emerald),
+                    var(--emerald) 0.22em,
+                    var(--trans) 0.22em,
+                    var(--trans) 0.78em,
+                    var(--emerald) 0.78em,
+                    var(--emerald) 1em),
+                repeating-linear-gradient(90deg,
+                    var(--trans),
+                    var(--trans) 0.42em,
+                    var(--white) 0.42em,
+                    var(--white) 0.58em,
+                    var(--trans) 0.58em,
+                    var(--trans) 1em),
+                repeating-linear-gradient(0deg,
+                    var(--trans),
+                    var(--trans) 0.42em,
+                    var(--white) 0.42em,
+                    var(--white) 0.58em,
+                    var(--trans) 0.58em,
+                    var(--trans) 1em);
+            background-size: 1em 1em;
+        }
+
+        .lazy-triangle {
+            background-color: var(--hazelnut);
+            background-image:
+                repeating-linear-gradient(45deg,
+                    var(--trans),
+                    var(--trans) 0.36em,
+                    var(--orange) 0.37em,
+                    var(--orange) 1em);
+            background-size: 0.5em 0.5em;
+        }
+
+        .isometric {
+            background-color: var(--blue-tack);
+            background-image:
+                repeating-linear-gradient(30deg,
+                    var(--trans),
+                    var(--trans) 0.32em,
+                    var(--robins-egg) 0.33em,
+                    var(--robins-egg) 0.6em,
+                    var(--trans) 0.61em,
+                    var(--trans) 1em),
+                repeating-linear-gradient(-30deg,
+                    var(--trans),
+                    var(--trans) 0.32em,
+                    var(--robins-egg) 0.33em,
+                    var(--robins-egg) 0.6em,
+                    var(--trans) 0.61em,
+                    var(--trans) 1em);
+            background-size: 1em 0.5em;
+        }
+
+        .googly-eyes {
+            background-color: var(--bud);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--white),
+                    var(--white) 0.42em,
+                    var(--trans) 0.43em,
+                    var(--trans) 2em),
+                repeating-radial-gradient(circle at 0.5em 0.57em,
+                    var(--sage),
+                    var(--sage) 0.42em,
+                    var(--trans) 0.43em,
+                    var(--trans) 2em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .googly-eyes::before {
+            background-image:
+                repeating-radial-gradient(circle at 0.56em 0.64em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 1.4em 0.4em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 2.6em 0.45em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+
+                repeating-radial-gradient(circle at 0.42em 1.45em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 1.4em 1.55em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 2.4em 1.4em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+
+                repeating-radial-gradient(circle at 0.6em 2.55em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 1.55em 2.4em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em),
+                repeating-radial-gradient(circle at 2.5em 2.6em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.22em,
+                    var(--trans) 4em,
+                    var(--ink) 5em);
+            background-size: 3em 3em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .googly-eyes::after {
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--white),
+                    var(--trans) 0.22em,
+                    var(--trans) 3em);
+            background-size: 1em 1em;
+            background-position: 0.65em 0.35em;
+            opacity: 0.5;
+        }
+
+        .circles {
+            background-color: var(--peach);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--trans),
+                    var(--trans) 0.46em,
+                    var(--robins-egg) 0.47em,
+                    var(--robins-egg) 0.54em,
+                    var(--trans) 0.55em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .circles::before {
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--trans),
+                    var(--trans) 0.46em,
+                    var(--robins-egg) 0.47em,
+                    var(--robins-egg) 0.54em,
+                    var(--trans) 0.55em);
+            background-size: 1em 1em;
+            background-position: 0em 0em;
+        }
+
+        .fake-luggage {
+            background-color: var(--hazelnut);
+            background-image:
+                repeating-radial-gradient(circle at 0.4em 0.4em,
+                    var(--trans),
+                    var(--trans) 0.03em,
+                    var(--butter) 0.03em,
+                    var(--butter) 0.08em,
+                    var(--trans) 0.09em,
+                    var(--trans) 0.45em,
+                    var(--butter) 0.46em,
+                    var(--butter) 0.6em);
+            background-size: 0.8em 0.8em;
+            background-position: 0.6em 0.6em;
+        }
+
+        .circle-grid {
+            background-color: var(--forest);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.5em,
+                    var(--sage),
+                    var(--sage) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 0.45em,
+                    var(--sage) 0.46em);
+            background-size: 1em 1em;
+            background-position: 0.5em 0.5em;
+        }
+
+        .squares {
+            background-color: var(--vavavoom);
+            background-image:
+                repeating-linear-gradient(-90deg,
+                    var(--coral),
+                    var(--coral) 0.4em,
+                    var(--trans) 0.4em,
+                    var(--trans) 0.8em),
+                repeating-linear-gradient(0deg,
+                    var(--coral),
+                    var(--coral) 0.4em,
+                    var(--trans) 0.4em,
+                    var(--trans) 0.8em);
+        }
+
+        .blood-moon {
+            background: var(--bloom);
+            background-image:
+                repeating-radial-gradient(circle at 0.35em 0.15em,
+                    var(--bloom),
+                    var(--bloom) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.25em 0.25em,
+                    var(--rouge),
+                    var(--rouge) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.22em 0.28em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 1.15em 0.95em,
+                    var(--bloom),
+                    var(--bloom) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 1.05em 1.05em,
+                    var(--rouge),
+                    var(--rouge) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 1.02em 1.08em,
+                    var(--ink),
+                    var(--ink) 0.2em,
+                    var(--trans) 0.21em,
+                    var(--trans) 3em);
+            background-size: 1.6em 1.6em;
+            background-position: 1.17em 1.12em;
+        }
+
+        .pyramids {
+            background: var(--mink);
+            background-image:
+                repeating-linear-gradient(-65deg,
+                    var(--trans),
+                    var(--trans) 0.5em,
+                    var(--mink) 0.5em,
+                    var(--mink) 0.74em,
+                    var(--trans) 0.74em,
+                    var(--trans) 3em),
+                repeating-linear-gradient(-55deg,
+                    var(--fudge),
+                    var(--fudge) 0.3em,
+                    var(--trans) 0.31em,
+                    var(--trans) 3em),
+                repeating-linear-gradient(55deg,
+                    var(--fudge),
+                    var(--fudge) 0.3em,
+                    var(--trans) 0.31em,
+                    var(--trans) 3em),
+                repeating-linear-gradient(45deg,
+                    var(--chocolate),
+                    var(--chocolate) 0.38em,
+                    var(--trans) 0.37em,
+                    var(--trans) 3em);
+            background-size: 1.2em 1em;
+            background-position: 0.35em 0.8em;
+        }
+
+        .sharp-stars {
+            background: var(--yellow);
+            background-image:
+                repeating-radial-gradient(circle at 0.4em 0.4em,
+                    var(--slate),
+                    var(--slate) 0.4em,
+                    var(--purple-slate) 0.41em,
+                    var(--purple-slate) 0.46em,
+                    var(--trans) 0.47em,
+                    var(--trans) 3em);
+            background-size: 0.8em 0.8em;
+            background-position: 1em 1em;
+        }
+
+        .stars {
+            background: var(--mushroom);
+            background-image:
+                repeating-radial-gradient(circle at 0.8em 0.8em,
+                    var(--twilight),
+                    var(--twilight) 0.85em,
+                    var(--trans) 0.86em,
+                    var(--trans) 3em);
+            background-size: 1.6em 1.6em;
+            background-position: 1em 1em;
+        }
+
+        .confetti {
+            background: var(--peach);
+            background-image:
+                repeating-radial-gradient(circle at 0.2em 0.2em,
+                    var(--lemon),
+                    var(--lemon) 0.16em,
+                    var(--trans) 0.161em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.7em 0.7em,
+                    var(--yellow),
+                    var(--yellow) 0.16em,
+                    var(--trans) 0.161em,
+                    var(--trans) 3em);
+            background-size: 1em 1em;
+            background-position: 0.05em 0.05em;
+        }
+
+        .dots {
+            background: var(--clay);
+            background-image:
+                repeating-radial-gradient(circle at 0.2em 0.2em,
+                    var(--succulent),
+                    var(--succulent) 0.08em,
+                    var(--trans) 0.081em,
+                    var(--trans) 3em),
+                repeating-radial-gradient(circle at 0.6em 0.6em,
+                    var(--sage),
+                    var(--sage) 0.08em,
+                    var(--trans) 0.081em,
+                    var(--trans) 3em);
+            background-size: 0.8em 0.8em;
+        }
+
+        .cat-toes {
+            background: var(--powder-pink);
+            background-image:
+                repeating-radial-gradient(circle at 0.5em 0.55em,
+                    var(--dusty-pink),
+                    var(--dusty-pink) 0.24em,
+                    var(--trans) 0.241em,
+                    var(--trans) 4em),
+                repeating-radial-gradient(circle at 0.25em 0.24em,
+                    var(--dusty-pink),
+                    var(--dusty-pink) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 4em),
+                repeating-radial-gradient(circle at 0.5em 0.15em,
+                    var(--dusty-pink),
+                    var(--dusty-pink) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 4em),
+                repeating-radial-gradient(circle at 0.75em 0.24em,
+                    var(--dusty-pink),
+                    var(--dusty-pink) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 4em);
+            background-position: 0.2em 0.3em;
+            background-size: 1.2em 1.2em;
+        }
+
+        .diamonds {
+            background: var(--sakura);
+            background-image:
+                repeating-linear-gradient(60deg,
+                    var(--slate),
+                    var(--slate) 0.6em,
+                    var(--trans) 0.61em,
+                    var(--trans) 0.9em,
+                    var(--slate) 0.91em),
+                repeating-linear-gradient(-60deg,
+                    var(--slate),
+                    var(--slate) 0.6em,
+                    var(--trans) 0.61em,
+                    var(--trans) 0.9em,
+                    var(--slate) 0.91em),
+                repeating-linear-gradient(90deg,
+                    var(--white),
+                    var(--white) 0.3em,
+                    var(--trans) 0.31em,
+                    var(--trans) 0.52em,
+                    var(--white) 0.525em);
+            background-position: 0.48em 0;
+            background-size: 21em;
+        }
+
+        .trellis {
+            background: var(--purple-slate);
+            background-image:
+                repeating-linear-gradient(-60deg,
+                    var(--dusty-pink),
+                    var(--dusty-pink) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 0.4em,
+                    var(--dusty-pink) 0.41em),
+                repeating-linear-gradient(60deg,
+                    var(--hazelnut),
+                    var(--hazelnut) 0.1em,
+                    var(--trans) 0.11em,
+                    var(--trans) 0.4em,
+                    var(--hazelnut) 0.41em);
+            background-size: 10em;
+        }
+
+        .orange-buzz {
+            background: var(--orange);
+            background-image:
+                repeating-linear-gradient(45deg,
+                    var(--peach),
+                    var(--peach) 0.2em,
+                    var(--trans) 0.2em,
+                    var(--trans) 0.4em);
+            background-size: 0.2em 20em;
+        }
+
+        .lemon-lime-gingham {
+            background: var(--pale-lemon);
+        }
+
+        .lemon-lime-gingham::before {
+            background-image:
+                repeating-linear-gradient(0deg,
+                    var(--yellow),
+                    var(--yellow) 0.2em,
+                    var(--trans) 0.2em,
+                    var(--trans) 0.4em,
+                    var(--emerald) 0.4em,
+                    var(--emerald) 0.6em,
+                    var(--trans) 0.6em,
+                    var(--trans) 0.8em);
+            opacity: 0.4;
+        }
+
+        .lemon-lime-gingham::after {
+            background-image:
+                repeating-linear-gradient(90deg,
+                    var(--yellow),
+                    var(--yellow) 0.2em,
+                    var(--trans) 0.2em,
+                    var(--trans) 0.4em,
+                    var(--emerald) 0.4em,
+                    var(--emerald) 0.6em,
+                    var(--trans) 0.6em,
+                    var(--trans) 0.8em);
+            opacity: 0.4;
+        }
+
+        .lavender-lumberjack {
+            background-image:
+                repeating-linear-gradient(0deg,
+                    var(--trans2),
+                    var(--trans2) 0.4em,
+                    var(--trans) 0.4em,
+                    var(--trans) 0.8em),
+                repeating-linear-gradient(-90deg,
+                    var(--dusty-purple),
+                    var(--dusty-purple) 0.4em,
+                    var(--aubergine) 0.4em,
+                    var(--aubergine) 0.8em);
+        }
+
+        .vertical-stripes {
+            background-image:
+                repeating-linear-gradient(-90deg,
+                    var(--powder-blue),
+                    var(--powder-blue) 0.56em,
+                    var(--blue-tack) 0.56em,
+                    var(--blue-tack) 0.64em);
+        }
+
+        .diagonal-stripes {
+            background-image:
+                repeating-linear-gradient(-45deg,
+                    var(--sea-foam),
+                    var(--sea-foam) 0.3em,
+                    var(--spearmint) 0.3em,
+                    var(--spearmint) 0.4em);
+        }
+
+        .stripes {
+            background-image:
+                repeating-linear-gradient(var(--strawberry-yogurt),
+                    var(--strawberry-yogurt) 0.2em,
+                    var(--sakura) 0.2em,
+                    var(--sakura) 0.4em);
+        }
+    </style>
+</head>
+
+<body class="cumulus">
+
+</body>
+
+</html>
