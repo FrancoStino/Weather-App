@@ -11,22 +11,18 @@
 }
 
 #openSource {
+  font-family: "Patua One", cursive;
+  font-weight: 100;
   font-size: 15px;
-  color: rgb(0, 0, 0);
-  text-shadow: 1px 1px 2px #56a0ee, 0 0 1em#56a0ee, 0 0 0.2em #56a0ee;
+  color: grey;
   border-radius: 0 0 20px 20px;
   padding-left: 40px;
+  font-weight: 100;
   text-align: 10%;
   width: 700px;
   max-width: 95%;
   display: block;
   margin: auto;
-  font-weight: bolder;
-}
-
-#openSource a {
-  color: black;
-  text-shadow: 1px 1px 2px #cccccc, 0 0 1em #cccccc, 0 0 0.2em #cccccc;
 }
 
 form {
@@ -157,7 +153,6 @@ hr {
   width: 100%;
   display: block;
   margin: 0 auto;
-  font-weight: 100;
   font-size: 18px;
 }
 

@@ -11,7 +11,7 @@ if (hour < 10) {
 if (minute < 10) {
   minute = `0${minute}`;
 }
-updated.innerHTML=`<strong>${hour}:${minute}</strong>`;
+updated.innerHTML=`${hour}:${minute}`;
 }
 
 function systemDate()
