@@ -92,7 +92,11 @@ button:hover {
   max-width: 95%;
   border: 3px ridge black;
   border-radius: 30px;
-  background: linear-gradient(160deg, #f7de3a 0%, #f7b72f 50%);
+  background: linear-gradient(
+    160deg,
+    rgb(257, 232, 68) 1%,
+    rgb(255, 193, 57) 50%
+  );
   height: fit-content;
   padding: 0 3%;
 }
