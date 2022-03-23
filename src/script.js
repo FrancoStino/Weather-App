@@ -219,7 +219,7 @@ else{
 
 }
 }
-
+getResponse("tehran");
 systemDate();
 displayForecast();
 let celcius = null;
