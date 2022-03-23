@@ -25,6 +25,9 @@
   margin: auto;
 }
 
+#openSource a {
+  color: rgb(58, 134, 236);
+}
 form {
   display: inline;
 }
@@ -161,6 +164,9 @@ ul {
   padding: 0;
   margin: 10px 0 0 0;
   line-height: 40px;
+}
+#signLittle {
+  font-family: "Sniglet", cursive;
 }
 
 .weather-temp-big {

@@ -33,7 +33,8 @@ let year = [
 ];
 let dateShown = document.querySelector("#date-html");
 dateShown.innerHTML = `${date.getDate()} ${year[date.getMonth()]} ${date.getYear()+1900}`;
-
+  let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = date.getDay();
 let hour = date.getHours();
 let minute = date.getMinutes();
 let hourShown = document.querySelector(".clock");
@@ -43,20 +44,7 @@ if (hour < 10) {
 if (minute < 10) {
   minute = `0${minute}`;
 }
-
-let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = date.getDay();
 hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
-let daySmall = document.querySelector(".no1 p");
-daySmall.innerHTML = weekSmall[(day + 1) % 7];
-daySmall = document.querySelector(".no2 p");
-daySmall.innerHTML = weekSmall[(day + 2) % 7];
-daySmall = document.querySelector(".no3 p");
-daySmall.innerHTML = weekSmall[(day + 3) % 7];
-daySmall = document.querySelector(".no4 p");
-daySmall.innerHTML = weekSmall[(day + 4) % 7];
-daySmall = document.querySelector(".no5 p");
-daySmall.innerHTML = weekSmall[(day + 5) % 7];
 }
 
 function getInfoOfCity(response){
@@ -119,6 +107,27 @@ function prevent(event){
 
 }
 
+function displayForecast(){
+  let forecast = document.querySelector(".forecast");
+  let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let date = new Date();
+  let day = date.getDay();
+  forecast.innerHTML =`<div class="col-1 col-md-1"></div>`;
+  for(let i=1;i<6;i++){
+  forecast.innerHTML = forecast.innerHTML +`
+   <div class="col-5 col-md-2">
+        <div class="card no${i}" style="width: 100%;">
+          <img class="card-img-top" src="images/animated/snowy-3.svg" alt="Card image cap" />
+          <div>
+            <p class="card-text">${weekSmall[(day + i) % 7]}</p>
+          </div>
+          <h7 class="card-text">9°C/12°C</h7>
+        </div>
+      </div>
+  `
+}
+}
+displayForecast();
 function changeActive(){
 
 let active =document.getElementsByClassName("active");
@@ -157,6 +166,7 @@ if(tempBig.innerHTML==celcius){
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°F";
   changeActive();
+ 
  /* let no1 = document.querySelector(".no1");
   no1.innerHTML=toFarenheit(no1.innerHTML);
   let no2 =document.querySelector(".no2");
