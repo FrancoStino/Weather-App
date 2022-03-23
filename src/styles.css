@@ -242,7 +242,12 @@ ul {
 .btn-group-vertical {
   padding-bottom: 10px;
 }
-
+.max {
+  font-weight: bolder;
+}
+.min {
+  color: gray;
+}
 .marginRow {
   margin: 0px !important;
 }

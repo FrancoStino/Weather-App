@@ -80,6 +80,8 @@ lastUpdated(response.data.dt*1000);
 let image = document.querySelector(".weather-photo-big");
 image.setAttribute("src",`images/big/${response.data.weather[0].icon}.svg`);
 image.setAttribute("alt",`${response.data.weather[0].description}`);
+  let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+axios.get(forecastUrl).then(forecastApi);
 }
 
 function getCurrent(pos) {
@@ -107,7 +109,24 @@ function prevent(event){
 
 }
 
+function forecastApi(response){
+  console.log(response.data.daily);
+  for(let i=1;i<6;i++){
+  let dayMax = document.querySelector(`.no${i} .max`);
+  dayMax.innerHTML =Math.round(response.data.daily[i].temp.max);
+    let dayMin = document.querySelector(`.no${i} .min`);
+  dayMin.innerHTML =Math.round(response.data.daily[i].temp.min);
+  let img = document.querySelector(`.no${i} img`);
+  img.setAttribute("src",`images/small/${response.data.daily[i].weather[0].icon}.svg`);
+  img.setAttribute("alt",`${response.data.daily[i].weather[0].description}`);
+  }
+}
+
+
 function displayForecast(){
+  //the api
+  let url = `api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=${apiKey}`;
+  //the html
   let forecast = document.querySelector(".forecast");
   let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let date = new Date();
@@ -129,7 +148,7 @@ function displayForecast(){
           <div>
             <p class="card-text">${weekSmall[(day + i) % 7]}</p>
           </div>
-          <h7 class="card-text">9°C/12°C</h7>
+          <h7 class="card-text"><span class="max">9</span>° / <span class="min">12</span>°</h7>
         </div>
       </div>
   `
@@ -173,6 +192,12 @@ if(tempBig.innerHTML==celcius){
   feels.innerHTML =toFarenheit(feels.innerHTML);
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°F";
+ for(let i=1;i<6;i++){
+  let dayMax = document.querySelector(`.no${i} .max`);
+  dayMax.innerHTML =toFarenheit(dayMax.innerHTML);
+    let dayMin = document.querySelector(`.no${i} .min`);
+  dayMin.innerHTML = toFarenheit(dayMin.innerHTML);
+  }
   changeActive();
 }
 else{
@@ -192,6 +217,12 @@ else{
   feels.innerHTML = toCelcius(feels.innerHTML);
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°C";
+  for(let i=1;i<6;i++){
+  let dayMax = document.querySelector(`.no${i} .max`);
+  dayMax.innerHTML =toCelcius(dayMax.innerHTML);
+    let dayMin = document.querySelector(`.no${i} .min`);
+  dayMin.innerHTML = toCelcius(dayMin.innerHTML);
+  }
  changeActive();
 
 }
