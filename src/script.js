@@ -139,7 +139,7 @@ function displayForecast(){
   forecast.innerHTML = forecast.innerHTML +`
    <div class="col-${size} col-md-2">
         <div class="card no${i}" style="width: 100%;">
-          <img class="card-img-top" src="images/animated/snowy-3.svg" alt="Card image cap" />
+          <img class="card-img-top" src="images/animated/snowy-3.svg" alt="loading" />
           <div>
             <p class="card-text">${weekSmall[(day + i) % 7]}</p>
           </div>
