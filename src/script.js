@@ -52,14 +52,12 @@ let cityName = document.querySelector(".location-name-big");
 cityName.innerHTML=response.data.name;
 
 let country = document.getElementById("country");
-console.log(response.data.sys.country);
 if(response.data.sys.country === undefined){
   country.innerHTML = "";
 }
 else{
  country.innerHTML=response.data.sys.country;
 }
-console.log(country.innerHTML);
 let active =document.getElementsByClassName("active");
 let far = document.getElementById("far");
 if(active[0]!==far){
@@ -112,7 +110,6 @@ function prevent(event){
 }
 
 function forecastApi(response){
-  console.log(response.data.daily);
   for(let i=1;i<6;i++){
   let dayMax = document.querySelector(`.no${i} .max`);
   dayMax.innerHTML =Math.round(response.data.daily[i].temp.max);
@@ -124,11 +121,7 @@ function forecastApi(response){
   }
 }
 
-
 function displayForecast(){
-  //the api
-  let url = `api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=${apiKey}`;
-  //the html
   let forecast = document.querySelector(".forecast");
   let weekSmall = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let date = new Date();
@@ -156,7 +149,7 @@ function displayForecast(){
   `
 }
 }
-displayForecast();
+
 function changeActive(){
 
 let active =document.getElementsByClassName("active");
@@ -172,9 +165,6 @@ else{
   far.classList.add("active");
   cel.classList.remove("active");
 }
-console.log(active[0]===cel);
-console.log(cel);
-console.log(far);
 }
 
 function toFarenheit(num){
@@ -230,13 +220,14 @@ else{
 }
 }
 
+systemDate();
+displayForecast();
 let celcius = null;
 navigator.geolocation.getCurrentPosition(getCurrent);
 let search = document.querySelector("#search");
 search.addEventListener("submit",changeLocationToValue);
 let here = document.querySelector("#here");
 here.addEventListener("click",prevent);
-systemDate();
 let far=document.querySelector("button#far");
 far.addEventListener("click",toFarenheitAll);
 let cel= document.querySelector("button#cel");
