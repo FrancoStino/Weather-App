@@ -65,6 +65,8 @@ let far = document.getElementById("far");
 if(active[0]!==far){
 changeActive();
 }
+let signLittle = document.querySelector("#signLittle");
+ signLittle.innerHTML ="°C";
 let cityTemp= document.querySelector("#temp");
 celcius = Math.round(response.data.main.temp);
 cityTemp.innerHTML= Math.round(response.data.main.temp);
