@@ -49,7 +49,7 @@ hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 
 function getInfoOfCity(response){
   if(response.data.name==""){
-    alert("feature is not available in your region.please enter your location manually.")
+    alert("feature is not available in your region. \nplease enter your location manually.")
     return;
   }
 let cityName = document.querySelector(".location-name-big");
