@@ -219,9 +219,10 @@ else{
 
 }
 }
-getResponse("tehran");
+
 systemDate();
 displayForecast();
+getResponse("tehran");
 let celcius = null;
 navigator.geolocation.getCurrentPosition(getCurrent);
 let search = document.querySelector("#search");
