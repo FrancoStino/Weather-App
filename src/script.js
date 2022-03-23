@@ -48,6 +48,9 @@ hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 }
 
 function getInfoOfCity(response){
+  if(response.data.name==""){
+    return;
+  }
 let cityName = document.querySelector(".location-name-big");
 cityName.innerHTML=response.data.name;
 
