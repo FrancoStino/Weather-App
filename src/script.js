@@ -47,11 +47,16 @@ if (minute < 10) {
 hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 }
 
+let first = 0;
 function getInfoOfCity(response){
-  if(response.data.name==""){
+  if(response.data.name=="" && first===1){
     alert("feature is not available in your region. \nplease enter your location manually.")
     return;
   }
+  else if(response.data.name==""){
+    return;
+  }
+
 let cityName = document.querySelector(".location-name-big");
 cityName.innerHTML=response.data.name;
 
@@ -107,6 +112,7 @@ getResponse(input2);
 }
 
 function prevent(event){
+  first = 1;
  event.preventDefault();
  navigator.geolocation.getCurrentPosition(getCurrent);
 
