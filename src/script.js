@@ -113,9 +113,17 @@ function displayForecast(){
   let date = new Date();
   let day = date.getDay();
   forecast.innerHTML =`<div class="col-1 col-md-1"></div>`;
+  let size = 5;
   for(let i=1;i<6;i++){
+    if(i===3 || i===5){
+        forecast.innerHTML = forecast.innerHTML + `<div class="col-1 col-md-auto no-gutters "></div>
+      <div class="col-1 col-md-auto no-gutters"></div>`;
+    }
+    if(i==5){
+      size=10;
+    }
   forecast.innerHTML = forecast.innerHTML +`
-   <div class="col-5 col-md-2">
+   <div class="col-${size} col-md-2">
         <div class="card no${i}" style="width: 100%;">
           <img class="card-img-top" src="images/animated/snowy-3.svg" alt="Card image cap" />
           <div>
@@ -166,17 +174,6 @@ if(tempBig.innerHTML==celcius){
   let signLittle = document.querySelector("#signLittle");
  signLittle.innerHTML ="°F";
   changeActive();
- 
- /* let no1 = document.querySelector(".no1");
-  no1.innerHTML=toFarenheit(no1.innerHTML);
-  let no2 =document.querySelector(".no2");
-  no2.innerHTML=toFarenheit(no2.innerHTML);
-  let no3 =document.querySelector(".no3");
-  no3.innerHTML=toFarenheit(no3.innerHTML);
-  let no4 =document.querySelector(".no4");
-  no4.innerHTML=toFarenheit(no4.innerHTML);
-  let no5 = document.querySelector(".no5");
-  no5.innerHTML=toFarenheit(no5.innerHTML);*/
 }
 else{
   return;
