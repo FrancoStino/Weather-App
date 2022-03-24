@@ -49,6 +49,7 @@ hourShown.innerHTML = `${hour}:${minute} ${weekSmall[day]}`;
 
 let first = 0;
 function getInfoOfCity(response){
+  console.log(response.data);
   if(response.data.name=="" && first===1){
     alert("feature is not available in your region. \nplease enter your location manually.")
     return;
@@ -149,7 +150,7 @@ function displayForecast(){
   forecast.innerHTML = forecast.innerHTML +`
    <div class="col-${size} col-md-2">
         <div class="card no${i}" style="width: 100%;">
-          <img class="card-img-top" src="images/animated/snowy-3.svg" alt="loading" />
+          <img class="card-img-top" src="images/small/10d.svg" alt="loading" />
           <div>
             <p class="card-text">${weekSmall[(day + i) % 7]}</p>
           </div>
